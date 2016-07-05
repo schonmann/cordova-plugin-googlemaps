@@ -2454,6 +2454,35 @@ Geocoder.geocode = function(geocoderRequest, callback) {
 };
 
 /*****************************************************************************
+ * Directions class
+ *****************************************************************************/
+
+//SC
+
+var DirectionsService = {};
+
+DirectionsService.route = function(directionsRequest, callback) {
+    directionsRequest = directionsRequest || {};
+
+    var pluginExec = function() {
+        cordova.exec(function(results, status) {
+            if(typeof callback === "function"){
+                callback(results,status);
+            }
+        }, function(error) {
+            if(typeof callback === "function") {
+                callback([], error);
+            }
+        }, "DirectionsService", 'route', [directionsRequest]);
+    };
+
+    pluginExec();
+};
+
+//CS
+
+
+/*****************************************************************************
  * Watch dog timer for child elements
  *****************************************************************************/
 var _mapInstance = new App();
@@ -2651,6 +2680,9 @@ module.exports = {
     },
     external: externalService,
     Geocoder: Geocoder,
+    //SC
+    DirectionsService: DirectionsService,
+    //CS
     geometry: {
         encoding: {
             decodePath: decodePath,

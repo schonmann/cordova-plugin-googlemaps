@@ -41,6 +41,11 @@
             <feature name="Geocoder">
                 <param name="android-package" value="plugin.google.maps.MyGeocoder" />
             </feature>
+            <!--SC-->
+            <feature name="DirectionsService"> 
+                <param name="android-package" value="plugin.google.maps.MyDirections" />
+            </feature>
+            <!--ENDSC-->
         </config-file>
 
         <framework src="com.google.android.gms:play-services-maps:+" />
@@ -58,6 +63,9 @@
         <source-file src="src/android/plugin/google/maps/PluginCircle.java" target-dir="src/plugin/google/maps" />
         <source-file src="src/android/plugin/google/maps/External.java" target-dir="src/plugin/google/maps" />
         <source-file src="src/android/plugin/google/maps/MyGeocoder.java" target-dir="src/plugin/google/maps" />
+        <!--SC-->
+        <source-file src="src/android/plugin/google/maps/MyDirections.java" target-dir="src/plugin/google/maps" />
+        <!--CS-->
         <source-file src="src/android/plugin/google/maps/PluginGroundOverlay.java" target-dir="src/plugin/google/maps" />
         <source-file src="src/android/plugin/google/maps/PluginKmlOverlay.java" target-dir="src/plugin/google/maps" />
         <source-file src="src/android/plugin/google/maps/PluginMap.java" target-dir="src/plugin/google/maps" />
